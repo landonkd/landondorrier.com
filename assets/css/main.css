@@ -1,0 +1,161 @@
+/* Variables 
+----------------------------- */
+:root {
+  /* Colors */
+  --bg: #C1C1F0;
+  --dark: #141415;
+  --violet: #7734FE;
+  --violet-d: #452F8B;
+  --ultra-violet: #430BFF;
+
+  /* Typography */
+  --base-font-size: 1rem;
+
+  /* Measures */
+  --border: 2px solid var(--violet-d);
+  --base-pad: 20px;
+  --section-pad: 10px;
+  --site-gutter: 20px;
+
+  /* Motion
+  ------------------- */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(.895,.03,.685,.22);
+  --ease-out: cubic-bezier(.165,.84,.44,1);
+  --ease-authentic-motion: cubic-bezier(0.4,0,0.2,1);
+}
+
+@media (min-width: 425px) {
+  :root {
+    --base-font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 750px) {
+  :root {
+    --site-gutter: 50px;
+  }
+}
+
+
+/* Utility 
+------------------- */
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.nowrap {
+  display: block;
+  white-space: nowrap;
+}
+
+.list-style-none {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+
+/* Base 
+----------------------------- */
+body {
+  background-color: var(--bg);
+  color: var(--violet-d);
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-weight: bold;
+  padding: 0;
+  position: relative;
+}
+
+a,
+a:visited {
+  color: var(--violet-d);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--violet-d);
+  text-decoration: underline;
+}
+
+
+/* Layout 
+----------------------------- */
+.site-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  height: 100lvh;
+  overflow: hidden;
+  padding: var(--site-gutter);
+  position: relative;
+}
+
+.site-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero {
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+
+/* Custom elements 
+----------------------------- */
+.noise {
+  z-index: -10;
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/noise.webp');
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.radial {
+  border-radius: 100%;
+  background: url('../images/noise.webp'), radial-gradient(50% 50% at 50% 50%, #430BFF 0%, #C1C1F0 100%);
+  background-blend-mode: overlay, normal;
+  height: 100vh;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vh;
+  z-index: -5;
+}
+
+.section {
+  border-top: var(--border);
+  font-size: var(--base-font-size);
+  padding-top: var(--section-pad);
+}
+
+.lkd {
+  color: var(--violet);
+  font-size: var(--base-font-size);
+}
+
+.hero-headline {
+  color: var(--dark);
+  font-size: 10vw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: -60px;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  margin: 0;
+}
