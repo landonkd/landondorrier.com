@@ -9,6 +9,9 @@
   --violet-d: #452F8B;
   --ultra-violet: #430BFF;
 
+  /* Icons */
+  --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23452F8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
   /* Typography */
   --base-font-size: 1rem;
 
@@ -33,6 +36,7 @@
     --bg: #7734FE;
     --violet: #dadaf6;
     --violet-d: #C1C1F0;
+    --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23C1C1F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 }
 
@@ -136,7 +140,7 @@ a:focus {
 }
 
 a[href*='//']::after {
-  background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23452F8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: var(--arrow-data-url);
   background-position: center right;
   background-repeat: no-repeat;
   content: '';
