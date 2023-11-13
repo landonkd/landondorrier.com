@@ -1,10 +1,9 @@
 /* Variables 
 ----------------------------- */
 :root {
-  /* todo: OS/browser color theme mode */
-
   /* Colors */
   --bg: #C1C1F0;
+  --border-color: #452F8B;
   --dark: #141415;
   --violet: #7734FE;
   --violet-d: #452F8B;
@@ -14,7 +13,7 @@
   --base-font-size: 1rem;
 
   /* Measures */
-  --border: 2px solid var(--violet-d);
+  --border: 2px solid var(--border-color);
   --base-pad: 20px;
   --section-pad: 10px;
   --site-gutter: 20px;
@@ -25,6 +24,16 @@
   --ease-in: cubic-bezier(.895,.03,.685,.22);
   --ease-out: cubic-bezier(.165,.84,.44,1);
   --ease-authentic-motion: cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Dark mode
+------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #7734FE;
+    --violet: #dadaf6;
+    --violet-d: #C1C1F0;
+  }
 }
 
 @media (min-width: 425px) {
@@ -90,6 +99,17 @@ body {
   font-weight: bold;
   padding: 0;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--ultra-violet);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--ultra-violet);
+  color: white;
 }
 
 ul li,
