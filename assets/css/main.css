@@ -42,6 +42,23 @@
 
 /* Utility 
 ------------------- */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono/JetBrainsMono-Italic.woff2');
+  font-style: italic;
+  font-weight: normal;
+}
+
+
+/* Utility 
+------------------- */
 .sr-only {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -69,7 +86,7 @@
 body {
   background-color: var(--bg);
   color: var(--violet-d);
-  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   font-weight: bold;
   padding: 0;
   position: relative;
@@ -209,7 +226,7 @@ section.section {
   color: var(--dark);
   font-size: 12vw;
   font-style: italic;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 1.1;
   margin-top: -5px;
 }
