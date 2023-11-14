@@ -27,6 +27,7 @@
   --ease-in: cubic-bezier(.895,.03,.685,.22);
   --ease-out: cubic-bezier(.165,.84,.44,1);
   --ease-authentic-motion: cubic-bezier(0.4,0,0.2,1);
+  --radial-transform: translate(var(--mouse-x, calc(50vw - 50svh)), var(--mouse-y, -35px));
 }
 
 /* Dark mode
@@ -49,6 +50,7 @@
 @media (min-width: 750px) {
   :root {
     --site-gutter: 50px;
+    --radial-transform: translate(var(--mouse-x, calc(50vw - 50svh)), var(--mouse-y, 0));
   }
 }
 
@@ -173,18 +175,10 @@ a[href*='//']:focus {
   border-radius: 100%;
   background: radial-gradient(50% 50% at 50% 50%, var(--ultra-violet) 0%, var(--bg) 100%);
   min-height: 100svh;
-  left: 50%;
   position: absolute;
-  top: -35px;
-  transform: translate(var(--mouse-x, -50%), var(--mouse-y, 0));
+  transform: var(--radial-transform);
   transition: transform 1s var(--ease-out);
   z-index: -15;
-}
-
-@media (min-width: 750px) {
-  .radial {
-    top: 0;
-  }
 }
 
 

@@ -9,17 +9,23 @@
   // Move radial relative to mouse cursor
   document.addEventListener('mousemove', evt => {
 
-    let x = evt.clientX / innerWidth;
-    let y = evt.clientY / innerHeight;
+    // Option 1: sort of sticky to the center of viewport
+    // let x = evt.clientX / innerWidth;
+    // let y = evt.clientY / innerHeight;
+    // x = x * 50;
+    // y = y * 150;
+    // x = -75 + x;
+    // y = -75 + y;
 
-    x = x * 50;
-    y = y * 150;
+    // Option 2: sticky directly to center of mouse cursor
+    let x = evt.clientX;
+    let y = evt.clientY;
 
-    x = -75 + x;
-    y = -75 + y;
+    x = 'calc(' + x + 'px - 50%)';
+    y = 'calc(' + y + 'px - 50%)';
 
-    root.style.setProperty('--mouse-x', x + '%');
-    root.style.setProperty('--mouse-y', y + 'px');
+    root.style.setProperty('--mouse-x', x);
+    root.style.setProperty('--mouse-y', y);
 
   });
 
