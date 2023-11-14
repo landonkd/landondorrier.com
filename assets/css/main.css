@@ -266,8 +266,14 @@ section.section {
 
 @media (min-width: 1024px) {
   .hero-headline {
-    font-size: 10vw;
+    font-size: 11vw;
     margin-top: -60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-headline {
+    font-size: 10vw;
   }
 }
 
