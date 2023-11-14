@@ -248,6 +248,13 @@ section.section {
   position: relative;
 }
 
+@media (min-width: 750px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
 .hero-headline {
   color: var(--dark);
   font-size: 12vw;
@@ -257,12 +264,7 @@ section.section {
   margin-top: -5px;
 }
 
-@media (min-width: 750px) {
-  .hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-
+@media (min-width: 1024px) {
   .hero-headline {
     font-size: 10vw;
     margin-top: -60px;
