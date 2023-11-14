@@ -12,10 +12,10 @@
     let y = evt.clientY / innerHeight;
 
     x = x * 50;
-    y = y * 200;
+    y = y * 150;
 
     x = -75 + x;
-    y = -100 + y;
+    y = -75 + y;
 
     root.style.setProperty('--mouse-x', x + '%');
     root.style.setProperty('--mouse-y', y + 'px');

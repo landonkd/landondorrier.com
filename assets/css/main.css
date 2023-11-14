@@ -184,7 +184,7 @@ a[href*='//']:focus {
   .radial {
     top: 0;
     transform: translate(var(--mouse-x, -50%), var(--mouse-y, 0));
-    transition: transform 0.5s var(--ease-out);
+    transition: transform 1s var(--ease-out);
   }
 }
 
@@ -243,8 +243,8 @@ section.section {
   display: grid;
   height: 100%;
   place-content: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   position: relative;
 }
 
@@ -258,6 +258,11 @@ section.section {
 }
 
 @media (min-width: 750px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   .hero-headline {
     font-size: 10vw;
     margin-top: -60px;
