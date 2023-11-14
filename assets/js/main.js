@@ -3,8 +3,9 @@
  */
 ;(function () {
 	
+  // const mediaQueryMinTablet = window.matchMedia('(min-width: 750px)');
   const root = document.documentElement;
- 
+
   // Move radial relative to mouse cursor
   document.addEventListener('mousemove', evt => {
 

@@ -176,15 +176,14 @@ a[href*='//']:focus {
   left: 50%;
   position: absolute;
   top: -35px;
-  transform: translateX(-50%);
+  transform: translate(var(--mouse-x, -50%), var(--mouse-y, 0));
+  transition: transform 1s var(--ease-out);
   z-index: -15;
 }
 
 @media (min-width: 750px) {
   .radial {
     top: 0;
-    transform: translate(var(--mouse-x, -50%), var(--mouse-y, 0));
-    transition: transform 1s var(--ease-out);
   }
 }
 
