@@ -195,7 +195,7 @@ a[href*='//']:focus {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
-  height: 100svh;
+  min-height: 100svh;
   overflow: hidden;
   padding: var(--site-gutter);
   position: relative;
@@ -243,6 +243,8 @@ section.section {
   display: grid;
   height: 100%;
   place-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative;
 }
 
