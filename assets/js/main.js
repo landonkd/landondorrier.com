@@ -3,30 +3,28 @@
  */
 ;(function () {
 	
-  // const mediaQueryMinTablet = window.matchMedia('(min-width: 750px)');
+  // Vars
   const root = document.documentElement;
 
-  // Move radial relative to mouse cursor
+  /**
+   * Mosemove event listener
+   */
   document.addEventListener('mousemove', evt => {
-
-    // Option 1: sort of sticky to the center of viewport
-    // let x = evt.clientX / innerWidth;
-    // let y = evt.clientY / innerHeight;
-    // x = x * 50;
-    // y = y * 150;
-    // x = -75 + x;
-    // y = -75 + y;
-
-    // Option 2: sticky directly to center of mouse cursor
     let x = evt.clientX;
     let y = evt.clientY;
+    
+    radialSticky(x, y);
+  });
 
+  /**
+   * Move the radial to the exact mouse position.
+   */
+  function radialSticky(x, y) {
     x = 'calc(' + x + 'px - 50%)';
     y = 'calc(' + y + 'px - 50%)';
 
     root.style.setProperty('--mouse-x', x);
     root.style.setProperty('--mouse-y', y);
-
-  });
+  }
 
 })();

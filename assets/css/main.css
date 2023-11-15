@@ -2,15 +2,20 @@
 ----------------------------- */
 :root {
   /* Colors */
-  --bg: #C1C1F0;
-  --border-color: #452F8B;
+  --light: #C1C1F0;
+  --light-l: #DADAf6;
   --dark: #141415;
   --violet: #7734FE;
   --violet-d: #452F8B;
   --ultra-violet: #430BFF;
 
-  /* Icons */
-  --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23452F8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  /* Colors: Dark theme */
+  --base-text-color: var(--light);
+  --headline-text-color: var(--dark);
+  --highlight-text-color: var(--light-l);
+  --bg-color: var(--violet);
+  --border-color: var(--violet-d);
+  --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23C1C1F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 
   /* Typography */
   --base-font-size: 1rem;
@@ -30,14 +35,23 @@
   --radial-transform: translate(var(--mouse-x, calc(50vw - 50svh)), var(--mouse-y, -35px));
 }
 
-/* Dark mode
+/* Light theme mode
 ------------------- */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --bg: #7734FE;
-    --violet: #dadaf6;
-    --violet-d: #C1C1F0;
-    --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23C1C1F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    /* Colors: Light theme */
+    --base-text-color: var(--violet-d);
+    --headline-text-color: var(--dark);
+    --highlight-text-color: var(--violet);
+    --bg-color: var(--light);
+    --border-color: var(--violet-d);
+    --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23452F8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .site-header,
+  .site-middle,
+  .site-bottom {
+    mix-blend-mode: multiply;
   }
 }
 
@@ -99,8 +113,8 @@
 /* Base 
 ----------------------------- */
 body {
-  background-color: var(--bg);
-  color: var(--violet-d);
+  background-color: var(--bg-color);
+  color: var(--base-text-color);
   font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   font-weight: bold;
   padding: 0;
@@ -131,13 +145,13 @@ ol li:last-child {
 a,
 a:visited {
   border-bottom: 2px solid transparent;
-  color: var(--violet-d);
+  color: var(--base-text-color);
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: var(--violet-d);
+  color: var(--base-text-color);
   text-decoration: none;
 }
 
@@ -155,7 +169,7 @@ a[href*='//']::after {
 
 a[href*='//']:hover,
 a[href*='//']:focus {
-  border-color: var(--violet-d);
+  border-color: var(--base-text-color);
 }
 
 
@@ -173,7 +187,7 @@ a[href*='//']:focus {
 .radial {
   aspect-ratio: 1 / 1;
   border-radius: 100%;
-  background: radial-gradient(50% 50% at 50% 50%, var(--ultra-violet) 0%, var(--bg) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, var(--ultra-violet) 0%, var(--bg-color) 100%);
   min-height: 100svh;
   position: absolute;
   transform: var(--radial-transform);
@@ -214,7 +228,7 @@ section.section {
 }
 
 .nameplate {
-  color: var(--violet);
+  color: var(--highlight-text-color);
   font-size: var(--base-font-size);
   margin-bottom: 5px;
 }
@@ -249,7 +263,7 @@ section.section {
 }
 
 .hero-headline {
-  color: var(--dark);
+  color: var(--headline-text-color);
   font-size: 12vw;
   font-style: italic;
   font-weight: normal;
