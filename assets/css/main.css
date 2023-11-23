@@ -69,7 +69,7 @@
 }
 
 
-/* Utility 
+/* Fonts 
 ------------------- */
 @font-face {
   font-family: 'JetBrains Mono';
@@ -264,7 +264,7 @@ section.section {
 
 .hero-headline {
   color: var(--headline-text-color);
-  font-size: 12vw;
+  font-size: 13vw;
   font-style: italic;
   font-weight: normal;
   line-height: 1.1;
@@ -273,23 +273,23 @@ section.section {
 
 @media (min-width: 1024px) {
   .hero-headline {
-    font-size: 11vw;
+    font-size: 12vw;
     margin-top: -60px;
   }
 }
 
 @media (min-width: 1200px) {
   .hero-headline {
-    font-size: 10vw;
+    font-size: 11vw;
   }
 }
 
 .hero-headline .nowrap:first-of-type {
-  transform: translateX(-5vw);
+  transform: translateX(-3vw);
 }
 
 .hero-headline .nowrap:last-of-type {
-  transform: translateX(5vw);
+  transform: translateX(3vw);
 }
 
 
