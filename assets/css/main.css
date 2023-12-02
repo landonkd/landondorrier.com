@@ -76,6 +76,7 @@
   src: url('../fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2');
   font-style: normal;
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -83,6 +84,7 @@
   src: url('../fonts/JetBrainsMono/JetBrainsMono-Italic.woff2');
   font-style: italic;
   font-weight: normal;
+  font-display: swap;
 }
 
 
@@ -247,9 +249,9 @@ section.section {
 /* Site middle
 ----------------------------- */
 .hero {
+  align-items: center;
   display: grid;
   height: 100%;
-  place-content: center;
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
@@ -285,11 +287,11 @@ section.section {
 }
 
 .hero-headline .nowrap:first-of-type {
-  transform: translateX(-3vw);
+  text-align: left;
 }
 
 .hero-headline .nowrap:last-of-type {
-  transform: translateX(3vw);
+  text-align: end;
 }
 
 
