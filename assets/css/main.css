@@ -37,9 +37,8 @@
 
 /* Light theme mode
 ------------------- */
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
-    /* Colors: Light theme */
     --base-text-color: var(--violet-d);
     --headline-text-color: var(--dark);
     --highlight-text-color: var(--violet);
@@ -53,7 +52,7 @@
   .site-bottom {
     mix-blend-mode: multiply;
   }
-}
+} */
 
 @media (min-width: 425px) {
   :root {
