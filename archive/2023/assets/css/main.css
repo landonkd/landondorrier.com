@@ -1,0 +1,314 @@
+/* Variables 
+----------------------------- */
+:root {
+  /* Colors */
+  --light: #C1C1F0;
+  --light-l: #DADAf6;
+  --dark: #141415;
+  --violet: #7734FE;
+  --violet-d: #452F8B;
+  --ultra-violet: #430BFF;
+
+  /* Colors: Dark theme */
+  --base-text-color: var(--light);
+  --headline-text-color: var(--dark);
+  --highlight-text-color: var(--light-l);
+  --bg-color: var(--violet);
+  --border-color: var(--violet-d);
+  --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23C1C1F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  /* Typography */
+  --base-font-size: 1rem;
+
+  /* Measures */
+  --border: 2px solid var(--border-color);
+  --base-pad: 20px;
+  --section-pad: 10px;
+  --site-gutter: 20px;
+
+  /* Motion
+  ------------------- */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(.895,.03,.685,.22);
+  --ease-out: cubic-bezier(.165,.84,.44,1);
+  --ease-authentic-motion: cubic-bezier(0.4,0,0.2,1);
+  --radial-transform: translate(var(--mouse-x, calc(50vw - 50svh)), var(--mouse-y, -35px));
+}
+
+/* Light theme mode
+------------------- */
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --base-text-color: var(--violet-d);
+    --headline-text-color: var(--dark);
+    --highlight-text-color: var(--violet);
+    --bg-color: var(--light);
+    --border-color: var(--violet-d);
+    --arrow-data-url: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.435 1.607h9.9m0 0v9.899m0-9.9L1.607 14.335' stroke='%23452F8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .site-header,
+  .site-middle,
+  .site-bottom {
+    mix-blend-mode: multiply;
+  }
+} */
+
+@media (min-width: 425px) {
+  :root {
+    --base-font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 750px) {
+  :root {
+    --site-gutter: 50px;
+    --radial-transform: translate(var(--mouse-x, calc(50vw - 50svh)), var(--mouse-y, 0));
+  }
+}
+
+
+/* Fonts 
+------------------- */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2');
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono/JetBrainsMono-Italic.woff2');
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+}
+
+
+/* Utility 
+------------------- */
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.nowrap {
+  display: block;
+  white-space: nowrap;
+}
+
+.list-style-none {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+
+/* Base 
+----------------------------- */
+body {
+  background-color: var(--bg-color);
+  color: var(--base-text-color);
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-weight: bold;
+  padding: 0;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--ultra-violet);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--ultra-violet);
+  color: white;
+}
+
+ul li,
+ol li {
+  margin-bottom: 5px;
+}
+
+ul li:last-child,
+ol li:last-child {
+  margin-bottom: 0;
+}
+
+a,
+a:visited {
+  border-bottom: 2px solid transparent;
+  color: var(--base-text-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--base-text-color);
+  text-decoration: none;
+}
+
+a[href*='//']::after {
+  background-image: var(--arrow-data-url);
+  background-position: center right;
+  background-repeat: no-repeat;
+  content: '';
+  display: inline-block;
+  height: 14px;
+  margin-left: 15px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+a[href*='//']:hover,
+a[href*='//']:focus {
+  border-color: var(--base-text-color);
+}
+
+
+/* Custom elements 
+----------------------------- */
+.noise {
+  z-index: -10;
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/noise.webp');
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.radial {
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  background: radial-gradient(50% 50% at 50% 50%, var(--ultra-violet) 0%, var(--bg-color) 100%);
+  min-height: 100svh;
+  position: absolute;
+  transform: var(--radial-transform);
+  transition: transform 1s var(--ease-out);
+  z-index: -15;
+}
+
+
+/* Site container 
+----------------------------- */
+.site-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: var(--site-gutter);
+  position: relative;
+}
+
+.section {
+  border-top: var(--border);
+  font-size: var(--base-font-size);
+  padding-top: var(--section-pad);
+}
+
+section.section {
+  padding-bottom: calc(5 * var(--section-pad));
+}
+
+
+/* Site top
+----------------------------- */
+.site-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nameplate {
+  color: var(--highlight-text-color);
+  font-size: var(--base-font-size);
+  margin-bottom: 5px;
+}
+
+.main-nav {
+  text-align: right;
+}
+
+@media (max-width: 749px) {
+  .site-header .main-nav {
+    display: none;
+  }
+}
+
+
+/* Site middle
+----------------------------- */
+.hero {
+  align-items: center;
+  display: grid;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+@media (min-width: 750px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.hero-headline {
+  color: var(--headline-text-color);
+  font-size: 13vw;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.1;
+  margin-top: -5px;
+}
+
+@media (min-width: 1024px) {
+  .hero-headline {
+    font-size: 12vw;
+    margin-top: -60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-headline {
+    font-size: 11vw;
+  }
+}
+
+.hero-headline .nowrap:first-of-type {
+  text-align: left;
+}
+
+.hero-headline .nowrap:last-of-type {
+  text-align: end;
+}
+
+
+/* Site bottom
+----------------------------- */
+.copyright {
+  font-size: 0.625rem;
+  margin: 0;
+}
+
+@media (min-width: 425px) {
+  .copyright {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .site-bottom .section--bottom-nav {
+    display: none;
+  }
+}
