@@ -42,45 +42,4 @@
     requestAnimationFrame(loop);
   })();
 
-
-  // 
-  // ALTERNATIVE SOLUTION
-  //
-  /*
-  // Get the canvas element
-  var c = document.querySelector("canvas.noise");
-  var w = c.width;
-  var h = c.height;
-
-  // Create an off-screen canvas
-  var ocanvas = document.createElement("canvas");
-  // set offscreen canvas x2 size
-  ocanvas.width = w<<1;                               
-  ocanvas.height = h<<1;
-
-  var octx = ocanvas.getContext("2d", {alpha: false});
-  var idata = octx.createImageData(ocanvas.width, ocanvas.height);
-  // get 32-bit view
-  var buffer32 = new Uint32Array(idata.data.buffer);  
-
-  // render noise once, to the offscreen-canvas
-  noise(octx);
-
-  // main loop draw the offscreen canvas to random offsets
-  var ctx = c.getContext("2d", {alpha: false});
-  (function loop() {
-    var x = (w * Math.random())|0; // force integer values for position
-    var y = (h * Math.random())|0;
-    
-    ctx.drawImage(ocanvas, -x, -y); // draw static noise (pun intended)
-    requestAnimationFrame(loop)
-  })()
-
-  function noise(ctx) {
-    var len = buffer32.length - 1;
-    while(len--) buffer32[len] = Math.random() < 0.5 ? 0 : -1>>0;
-    ctx.putImageData(idata, 0, 0);
-  }
-  */
-
 })();

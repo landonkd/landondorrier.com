@@ -62,6 +62,12 @@
   }
 }
 
+@media (min-width: 1600px) {
+  :root {
+    --main-content-offset-top: 18rem;
+  }
+}
+
 @media (min-width: 1800px) {
   :root {
     --main-content-offset-top: 14rem;
@@ -303,15 +309,6 @@ a:focus {
 ----------------------------- */
 @keyframes disappear {
   0% {
-    display: block;
-  }
-  to {
-    display: none;
-  }
-}
-
-@keyframes fade-out {
-  0% {
     opacity: 1;
   }
   to {
@@ -372,6 +369,7 @@ a:focus {
 ----------------------------- */
 canvas.noise {
   animation: scale-blur 0s var(--cubic-screen-wipe) 1s 1 forwards;
+  background-color: var(--color-bg);
   height: 100lvh !important;
 	opacity: 0.05;
 	pointer-events: none;
