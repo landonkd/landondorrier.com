@@ -32,7 +32,7 @@
   ------------------- */
   --ease-in: cubic-bezier(.895,.03,.685,.22);
   --ease-out: cubic-bezier(.165,.84,.44,1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
   --ease-authentic-motion: cubic-bezier(0.4,0,0.2,1);
   --cubic-screen-wipe: cubic-bezier(.79,.14,.15,.86);
 }
@@ -294,6 +294,15 @@ a:focus {
 
 /* Page Transition
 ----------------------------- */
+@keyframes disappear {
+  0% {
+    display: block;
+  }
+  to {
+    display: none;
+  }
+}
+
 @keyframes fade-out {
   0% {
     opacity: 1;
@@ -312,11 +321,20 @@ a:focus {
   }
 }
 
+@keyframes scale-blur {
+  0% {
+    transform: scale(5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .screen-wipe {
   animation: 
-    slide-down 1s var(--cubic-screen-wipe) 0.5s 1 forwards,
-    fade-out 0s linear 1.5s 1 forwards;
-  background-color: var(--ultra-violet);
+    slide-down 1s var(--cubic-screen-wipe) 0s 1 forwards,
+    fade-out 0s linear 1s 1 forwards;
+  background-color: #2e2e2e;
   color: white;
   height: 100lvh;
   pointer-events: none;
@@ -329,15 +347,8 @@ a:focus {
 
 .screen-wipe--2 {
   animation: 
-    slide-down 1s var(--cubic-screen-wipe) 1s 1 forwards,
-    fade-out 0s linear 2s 1 forwards;
-  background-color: #2e2e2e;
-}
-
-.screen-wipe--3 {
-  animation: 
-    slide-down 1s var(--cubic-screen-wipe) 1.25s 1 forwards,
-    fade-out 0s linear 2.25s 1 forwards;
+    slide-down 1s var(--cubic-screen-wipe) 0.5s 1 forwards,
+    fade-out 0s linear 1.5s 1 forwards;
   background-color: #212121;
 }
 
@@ -345,10 +356,12 @@ a:focus {
 /* Absolute elements 
 ----------------------------- */
 canvas.noise {
+  animation: scale-blur 0s var(--cubic-screen-wipe) 0.75s 1 forwards;
   height: 100lvh;
 	opacity: 0.05;
 	pointer-events: none;
   position: fixed;
+  transform: scale(5);
 	user-select: none;
   width: 100vw;
   z-index: 9999;

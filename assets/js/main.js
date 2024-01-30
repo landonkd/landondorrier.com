@@ -6,7 +6,7 @@
   // technique for this demo found here 
   // http://stackoverflow.com/questions/22003491/animating-canvas-to-look-like-tv-noise
 
-  const canvas = document.querySelector('canvas'),
+  const canvas = document.querySelector('canvas.noise'),
   ctx = canvas.getContext('2d')
 
   canvas.width = canvas.height = 128
