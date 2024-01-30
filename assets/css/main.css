@@ -4,15 +4,16 @@
   /* Colors */
   --dark: #141414;
   --violet: #7734FE;
-  --violet-d: #553bab;
-  --violet-dd: #422e85;
+  --violet-d: #6B50C3;
+  --violet-dd: #5339A7;
+  --violet-ddd: #402C81;
   --ultra-violet: #430BFF;
   
   --color-name: var(--violet);
   --color-text: var(--violet-d);
   --color-heading: var(--violet-dd);
   --color-bg: var(--dark);
-  --color-border: var(--violet-dd);
+  --color-border: var(--violet-ddd);
 
   /* Typography */
   --base-font-size: 18px;
@@ -39,6 +40,7 @@
 
 @media (min-width: 750px) {
   :root {
+    --base-font-size: 16px;
     --grid-gap: 4.5rem;
     --main-content-offset-top: 10rem;
     --section-margin: calc(4 * var(--base-margin));
@@ -54,15 +56,22 @@
 
 @media (min-width: 1440px) {
   :root {
+    --base-font-size: 18px;
     --grid-gap: 6rem;
-    --main-content-offset-top: 18rem;
+    --main-content-offset-top: 14rem;
   }
 }
 
 @media (min-width: 1800px) {
   :root {
+    --main-content-offset-top: 14rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  :root {
     --base-font-size: 20px;
-    --main-content-offset-top: 11rem;
+    --main-content-offset-top: 31rem;
   }
 }
 
