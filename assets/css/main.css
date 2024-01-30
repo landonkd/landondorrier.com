@@ -15,7 +15,7 @@
   --color-border: var(--violet-dd);
 
   /* Typography */
-  --base-font-size: 16px;
+  --base-font-size: 18px;
   --font-serif: 'Editorial New', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   /* --font-sans: 'Supply Sans', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; */
 
@@ -26,7 +26,7 @@
   --grid-gap: 3rem;
   --main-content-offset-top: 2rem;
   --section-margin: calc(3 * var(--base-margin));
-  --site-gutter: 3rem;
+  --site-gutter: 2rem;
 
   /* Motion
   ------------------- */
@@ -42,13 +42,11 @@
     --grid-gap: 4.5rem;
     --main-content-offset-top: 10rem;
     --section-margin: calc(4 * var(--base-margin));
-    --site-gutter: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
-    --base-font-size: 18px;
     --main-content-offset-top: 15rem;
     --site-gutter: 3rem;
   }
@@ -332,8 +330,10 @@ a:focus {
 }
 
 .screen-wipe {
-  animation: fade-out 0s linear 1s 1 forwards;
-  background-color: var(--color-bg);
+  animation: 
+    slide-down 1s var(--cubic-screen-wipe) 0.5s 1 forwards,
+    fade-out 0s linear 1.5s 1 forwards;
+  background-color: #2e2e2e;
   color: white;
   display: block;
   height: 100%;
@@ -345,12 +345,25 @@ a:focus {
   z-index: 15;
 }
 
+.screen-wipe--2 {
+  animation: 
+    slide-down 1s var(--cubic-screen-wipe) 0.75s 1 forwards,
+    fade-out 0s linear 1.75s 1 forwards;
+  background-color: #212121;
+}
+.screen-wipe--3 {
+  animation: 
+    slide-down 1s var(--cubic-screen-wipe) 1.25s 1 forwards,
+    fade-out 0s linear 2.25s 1 forwards;
+  background-color: var(--color-bg);
+}
+
 
 /* Absolute elements 
 ----------------------------- */
 canvas.noise {
   animation: scale-blur 0s var(--cubic-screen-wipe) 1s 1 forwards;
-  height: 100%;
+  height: 100lvh !important;
 	opacity: 0.05;
 	pointer-events: none;
   position: fixed;
