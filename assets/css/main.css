@@ -303,12 +303,12 @@ a:focus {
   }
 }
 
-@keyframes fade-out {
+@keyframes vanish {
   0% {
-    opacity: 1;
+    
   }
   to {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -333,10 +333,11 @@ a:focus {
 .screen-wipe {
   animation: 
     slide-down 1s var(--cubic-screen-wipe) 0s 1 forwards,
-    fade-out 0s linear 1s 1 forwards;
+    vanish 0s linear 1s 1 forwards;
   background-color: #2e2e2e;
   color: white;
-  height: 100lvh;
+  display: block;
+  height: 100%;
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -348,7 +349,7 @@ a:focus {
 .screen-wipe--2 {
   animation: 
     slide-down 1s var(--cubic-screen-wipe) 0.5s 1 forwards,
-    fade-out 0s linear 1.5s 1 forwards;
+    vanish 0s linear 1.5s 1 forwards;
   background-color: #212121;
 }
 
@@ -357,7 +358,7 @@ a:focus {
 ----------------------------- */
 canvas.noise {
   animation: scale-blur 0s var(--cubic-screen-wipe) 0.75s 1 forwards;
-  height: 100lvh;
+  height: 100%;
 	opacity: 0.05;
 	pointer-events: none;
   position: fixed;
