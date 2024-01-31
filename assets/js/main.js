@@ -4,6 +4,7 @@
 ;(function () {
 	
   // Technique for this demo found here 
+  // Very resource intensive :(
   // http://stackoverflow.com/questions/22003491/animating-canvas-to-look-like-tv-noise
 
   const canvas = document.querySelector('canvas.noise'),
