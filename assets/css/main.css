@@ -70,7 +70,7 @@
 
 @media (min-width: 1600px) {
   :root {
-    --main-content-offset-top: 19vw;
+    --main-content-offset-top: 18vw;
   }
 }
 
@@ -227,6 +227,7 @@ a:focus {
   position: relative;
 }
 
+.section__heading::before,
 .section__heading::after {
   background-color: var(--color-border);
   bottom: 0;
@@ -237,6 +238,11 @@ a:focus {
   right: 0;
   width: 100vw;
 }
+
+/* .section__heading::before {
+  left: 0;
+  right: auto;
+} */
 
 
 /* Grid 
@@ -251,7 +257,7 @@ a:focus {
   width: 100%;
 }
 
-.grid__main-content {
+.grid__main {
   padding-top: var(--main-content-offset-top);
 }
 
@@ -262,7 +268,7 @@ a:focus {
     margin-right: 0;
     max-width: 100%;
   }
-  .grid__main-content {
+  .grid__main {
     grid-column: 2;
   }
 }
@@ -275,12 +281,13 @@ a:focus {
 
 @media (min-width: 1200px) {
   .grid {
-    gap: 10rem;
+    gap: 8rem;
   }
 }
 
 @media (min-width: 1600px) {
   .grid {
+    gap: 10rem;
     grid-template-columns: 1fr min(35ch, 100%) 1fr;
   }
 }
@@ -302,9 +309,24 @@ a:focus {
   z-index: 5;
 }
 
+.grid__name:last-child {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .grid__name {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .grid__name:first-child .letter:nth-child(n + 11) {
+    display: none;
+  }
+  .grid__name:last-child {
+    display: grid;
+    margin-bottom: calc(var(--grid-gap) * -1);
+    margin-top: auto;
   }
 }
 
@@ -315,7 +337,7 @@ a:focus {
 }
 
 .letter--o {
-  transform: scale(1.4) translate(-10%, 15%);
+  transform: scale(1.4) translate(-5%, 15%);
 }
 
 .letter svg {
@@ -339,6 +361,9 @@ a:focus {
 }
 .letter:nth-child(5n) .animate-in {
   animation-delay: 1.4s;
+}
+.letter:nth-child(6n) .animate-in {
+  animation-delay: 1.2s;
 }
 
 
@@ -400,14 +425,13 @@ a:focus {
 /* Absolute elements 
 ----------------------------- */
 .noise {
-  /* animation: scale-noise 0.95s linear 0s 1 forwards; */
-  background-image: url('../images/noise-2.gif');
+  background-image: url('../images/noise.webp');
   background-position: center;
   height: 100%;
-  opacity: 0.025;
+  opacity: 0.1;
   pointer-events: none;
   position: fixed;
   user-select: none;
   width: 100%;
-  z-index: 20;
+  z-index: 15;
 }
