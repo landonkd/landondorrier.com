@@ -254,6 +254,7 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
   max-width: 45ch;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -300,7 +301,7 @@ a:focus {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(6, auto) 1fr;
+  grid-template-rows: repeat(7, auto) 1fr;
   margin-left: auto;
   margin-right: auto;
   max-width: 460px;
@@ -320,12 +321,19 @@ a:focus {
 }
 
 @media (min-width: 1600px) {
+  .grid__name {
+    grid-template-rows: repeat(4, auto) 1fr;
+  }
+  .grid__name:first-child {
+    margin-bottom: -1rem;
+    margin-top: 0;
+  }
   .grid__name:first-child .letter:nth-child(n + 11) {
     display: none;
   }
   .grid__name:last-child {
     display: grid;
-    margin-bottom: calc(var(--grid-gap) * -1);
+    margin-bottom: -1rem;
     margin-top: auto;
   }
 }
