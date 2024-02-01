@@ -420,18 +420,3 @@ a:focus {
     fade-out 0s linear 2.25s 1 forwards;
   background-color: var(--color-bg);
 }
-
-
-/* Absolute elements 
------------------------------ */
-.noise {
-  background-image: url('../images/noise.webp');
-  background-position: center;
-  height: 100%;
-  opacity: 0.1;
-  pointer-events: none;
-  position: fixed;
-  user-select: none;
-  width: 100%;
-  z-index: 15;
-}
