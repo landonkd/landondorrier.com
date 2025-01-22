@@ -11,13 +11,14 @@
   --violet-d: #6B50C3;
   --violet-dd: #5339A7;
   --violet-ddd: #402C81;
+  --violet-dddd: #3a2874;
   --ultra-violet: #430BFF;
   
   --color-name: var(--violet);
   --color-text: var(--violet-d);
-  --color-heading: var(--violet-dd);
+  --color-heading: var(--violet-d);
   --color-bg: var(--moonlight);
-  --color-border: var(--violet-ddd);
+  --color-border: var(--violet-dddd);
 
   /* Typography */
   --base-font-size: 18px;
@@ -25,13 +26,16 @@
   --font-sans: 'Neue Montreal', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   /* Measures */
-  --border: 1px solid var(--color-border);
+  --space-stack: 1lh;
   --base-pad: 1rem;
-  --base-margin: 1.5rem;
+  --base-margin: var(--space-stack, 1.5rem);
   --grid-gap: 3rem;
   --main-content-offset-top: 2rem;
   --section-margin: calc(3 * var(--base-margin));
   --site-gutter: 2rem;
+
+  /* Other */
+  --border: 1px solid var(--color-border);
 
   /* Motion
   ------------------- */
@@ -220,7 +224,8 @@ a:focus {
   font-family: var(--font-serif);
   font-size: var(--base-font-size);
   font-style: italic;
-  font-weight: 800;
+  /* font-weight: 800; */
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: var(--base-margin);
   padding-bottom: calc(var(--base-pad) / 2);
